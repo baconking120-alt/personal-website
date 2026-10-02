@@ -1,3 +1,4 @@
+
 from django.views.generic import TemplateView
 from django.shortcuts import render
 
@@ -33,3 +34,15 @@ class ContactPageView(TemplateView):
 
 class ProductsPageView(TemplateView):
     template_name = "pages/products.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        context["products"] = [
+            "Product 1",
+            "Product 2",
+            "Product 3",
+            "Product 4",
+        ]
+
+        return context
