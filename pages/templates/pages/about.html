@@ -1,4 +1,7 @@
-<h1>About page</h1>
+{% extends "pages/base.html" %}
 
-<p>My name is {{ name }}.</p>
-<p>I am {{ age }} years old.</p>
+{% block content %}
+<h1>Company About Page</h1>
+<p>The company address is {{ contact_address }} and the phone number is
+  {{ phone_number }}.</p>
+{% endblock %}
